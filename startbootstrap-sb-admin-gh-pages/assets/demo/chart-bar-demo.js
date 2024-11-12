@@ -2,10 +2,9 @@
 Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
 Chart.defaults.global.defaultFontColor = '#292b2c';
 
-// Declare fluffyCount globally, so it's accessible to both the chart and the API call
 let cuteCount = 0;
 let sillyCount = 0;
-let fluffyCount = 0; // This will be updated after fetching the API data
+let fluffyCount = 0;
 let sleepyCount = 0;
 let maleCount = 0;
 let femaleCount = 0;
@@ -20,7 +19,7 @@ var myLineChart = new Chart(ctx, {
       label: "Revenue",
       backgroundColor: "rgba(2,117,216,1)",
       borderColor: "rgba(2,117,216,1)",
-      data: [cuteCount, sillyCount, fluffyCount, sleepyCount, maleCount, femaleCount] // Using fluffyCount as placeholder here
+      data: [cuteCount, sillyCount, fluffyCount, sleepyCount, maleCount, femaleCount]
     }],
   },
   options: {
