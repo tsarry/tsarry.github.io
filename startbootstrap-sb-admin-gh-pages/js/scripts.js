@@ -24,3 +24,52 @@ window.addEventListener('DOMContentLoaded', event => {
     }
 
 });
+
+function fetchCatImageXHR() {
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://cataas.com/cat", true);
+    xhr.responseType = "blob";
+
+    xhr.onload = function () {
+      if (xhr.status === 200) {
+        const imgURL = URL.createObjectURL(xhr.response);
+        const catDiv = document.getElementById("blueBox");
+        catDiv.innerHTML = `<img src="${imgURL}" alt="Random Cat Image" />`;
+      } else {
+        console.error("Failed to load cat image.");
+      }
+    };
+
+    xhr.send();
+  }
+
+window.onload = fetchCatImageXHR();
+
+
+
+
+    let json = ""
+    let js = null
+
+    function fetchCatImage() {
+        const xhr = new XMLHttpRequest();
+        xhr . open ( "GET" , "https://cataas.com/api/cats?tags=fluffy", true);
+        xhr . setRequestHeader ("Accept", "application/json");
+console.log(xhr.response)
+    xhr.onload = function () {
+        if ( xhr.status === 200) {
+            const response = JSON.parse(xhr.responseText) ;
+            const imgURL = " https://cataas.com" + response.url ;
+            const catDiv = document. getElementById("cat") ;
+            json = xhr.responseText
+            catDiv.innerHTML = json ;
+            js = JSON.parse(json)
+        } else {
+            console.error ("Failed to load cat image.") ;
+        }
+    };
+
+    xhr.send();
+}
+
+
