@@ -59,7 +59,7 @@ document.getElementById("ageRangeForm").addEventListener("submit", function (eve
     + "Office: " +  personInfo.office + ", "
     + "Age: " +  personInfo.age + ", "
     + "Start Date: " +  personInfo.startDate + ", "
-    + "Salary: " +  personInfo.salary + ", ";
+    + "Salary: " +  personInfo.salary;
 
     document.getElementById("averageSalary").textContent = 
         `Number of Entries: ${entryCount}, Average Salary: $${averageSalary}`;
