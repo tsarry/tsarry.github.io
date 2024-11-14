@@ -52,12 +52,14 @@ document.getElementById("ageRangeForm").addEventListener("submit", function (eve
 
     const averageSalary = (totalSalary / entryCount).toFixed(2);
 
-    document.getElementById("greenBox").innerHTML = tableData[parseInt(tableData.length * Math.random())].name + ", " 
-    + tableData[parseInt(tableData.length * Math.random())].position + ", " 
-    + tableData[parseInt(tableData.length * Math.random())].office + ", "
-    + tableData[parseInt(tableData.length * Math.random())].age + ", "
-    + tableData[parseInt(tableData.length * Math.random())].startDate + ", "
-    + tableData[parseInt(tableData.length * Math.random())].salary;
+    const personInfo = tableData[parseInt(tableData.length * Math.random())];
+
+    document.getElementById("greenBox").innerHTML = "Name: " + personInfo.name + ", "
+    + "Position: " +  personInfo.position + ", "
+    + "Office: " +  personInfo.office + ", "
+    + "Age: " +  personInfo.age + ", "
+    + "Start Date: " +  personInfo.startDate + ", "
+    + "Salary: " +  personInfo.salary + ", ";
 
     document.getElementById("averageSalary").textContent = 
         `Number of Entries: ${entryCount}, Average Salary: $${averageSalary}`;
