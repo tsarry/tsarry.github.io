@@ -44,10 +44,3 @@ function fetchCatImageXHR() {
   }
 
 window.onload = fetchCatImageXHR();
-
-
-
-
-    
-
-
